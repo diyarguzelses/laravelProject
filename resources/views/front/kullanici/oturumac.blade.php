@@ -1,32 +1,20 @@
 @extends('front.layouts.master')
-@section('title','Anasayfa')
+@section('title','Oturum Ac')
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Kaydol</div>
+                    <div class="panel-heading">Oturum Aç</div>
                     <div class="panel-body">
-
                         @include('front.widgets.errors')
-
-                        <form class="form-horizontal" role="form" method="POST" action="{{route('kullanici.kaydol')}}">
+                        @include('front.widgets.alert')
+                        <form class="form-horizontal" role="form" method="POST" action="{{route('kullanici.oturumac')}}">
                             @csrf
-
-                            <div class="form-group has-error">
-                                <label for="name" class="col-md-4 control-label">Ad Soyad</label>
-                                <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control" name="adsoyad" value="" required autofocus>
-                                    <span class="help-block">
-                                    <strong>Kullanıcı adı boş bırakılamaz</strong>
-                                </span>
-                                </div>
-                            </div>
-
                             <div class="form-group">
                                 <label for="email" class="col-md-4 control-label">Email</label>
                                 <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control" name="email" value="" required>
+                                    <input id="email" type="email" class="form-control" name="email" value="" required autofocus>
                                 </div>
                             </div>
 
@@ -38,23 +26,30 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="sifre-tekrari" class="col-md-4 control-label">Şifre (Tekrar)</label>
-                                <div class="col-md-6">
-                                    <input id="sifre-tekrari" type="password" class="form-control" name="sifre_confirmation" required>
+                                <div class="col-md-6 col-md-offset-4">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="benihatirla" checked> Beni hatırla
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <div class="col-md-6 col-md-offset-4">
+                                <div class="col-md-8 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary">
-                                        Kaydol
+                                        Giriş yap
                                     </button>
+
+                                    <a class="btn btn-link" href="#">
+                                        Şifremi Unuttum
+                                    </a>
                                 </div>
                             </div>
                         </form>
                     </div>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 @endsection
