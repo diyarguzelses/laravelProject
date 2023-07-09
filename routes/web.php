@@ -44,3 +44,10 @@ Route::group(['prefix'=>'sepet'], function(){
     Route::POST('/guncelle/{rowId}','App\Http\Controllers\SepetController@guncelle')->name('sepet.guncelle');
 
 });
+
+//siparişler
+Route::get('/siparisler','App\Http\Controllers\SiparislerController@index')->name('siparisler');
+//siparişdetay
+Route::get('/siparisler/{id}','App\Http\Controllers\SiparislerController@detay')->name('siparis');
+
+});
