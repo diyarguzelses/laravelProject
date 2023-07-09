@@ -45,9 +45,11 @@ Route::group(['prefix'=>'sepet'], function(){
 
 });
 
-//siparişler
-Route::get('/siparisler','App\Http\Controllers\SiparislerController@index')->name('siparisler');
-//siparişdetay
-Route::get('/siparisler/{id}','App\Http\Controllers\SiparislerController@detay')->name('siparis');
+/Route::group(['middleware'=>'auth'], function(){
 
+    //siparişler
+    Route::get('/siparisler','App\Http\Controllers\SiparislerController@index')->name('siparisler');
+    //siparişdetay
+    Route::get('/siparisler/{id}','App\Http\Controllers\SiparislerController@detay')->name('siparis');
+    //kullanıcı işlemleri
 });
