@@ -32,3 +32,15 @@ Route::group(['prefix'=>'kullanici'],function(){
 //ödeme
 Route::get('/odeme','App\Http\Controllers\OdemeController@index')->name('odeme');
 Route::post('/odemeyap','App\Http\Controllers\OdemeController@odemeyap')->name('odemeyap');
+
+
+
+Route::group(['prefix'=>'sepet'], function(){
+
+    Route::get('/','App\Http\Controllers\SepetController@index')->name('sepet');
+    Route::post('/ekle','App\Http\Controllers\SepetController@ekle')->name('sepet.ekle');
+    Route::delete('/kaldir/{rowId}','App\Http\Controllers\SepetController@kaldir')->name('sepet.kaldir');
+    Route::delete('/bosalt','App\Http\Controllers\SepetController@bosalt')->name('sepet.bosalt');
+    Route::POST('/guncelle/{rowId}','App\Http\Controllers\SepetController@guncelle')->name('sepet.guncelle');
+
+});
