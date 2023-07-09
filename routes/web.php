@@ -33,8 +33,6 @@ Route::group(['prefix'=>'kullanici'],function(){
 Route::get('/odeme','App\Http\Controllers\OdemeController@index')->name('odeme');
 Route::post('/odemeyap','App\Http\Controllers\OdemeController@odemeyap')->name('odemeyap');
 
-
-
 Route::group(['prefix'=>'sepet'], function(){
 
     Route::get('/','App\Http\Controllers\SepetController@index')->name('sepet');
@@ -45,7 +43,9 @@ Route::group(['prefix'=>'sepet'], function(){
 
 });
 
-/Route::group(['middleware'=>'auth'], function(){
+
+
+Route::group(['middleware'=>'auth'], function(){
 
     //siparişler
     Route::get('/siparisler','App\Http\Controllers\SiparislerController@index')->name('siparisler');
