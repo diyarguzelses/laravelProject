@@ -59,3 +59,8 @@ Route::group(['middleware'=>'auth'], function(){
 Route::get('/urun/{slug_urunadi}','App\Http\Controllers\UrunController@index')->name('urun');
 //ürün arama
 Route::post('/ara','App\Http\Controllers\UrunController@ara')->name('urun_ara');
+
+Route::group(['middleware'=>'yonetim'], function(){
+    Route::get('/anasayfa','App\Http\Controllers\Yonetim\AnasayfaController@index')->name('yonetim.anasayfa');
+
+});
