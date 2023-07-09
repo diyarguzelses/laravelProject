@@ -40,6 +40,7 @@ class KategoriTableSeeder extends Seeder
                         DB::table('kategori')->insert(['kategori_adi'=>'Anne Ve Çocuk','slug'=>'anne-cocuk']);
 
 DB::statement('SET FOREIGN_KEY_CHECKS=1');
+
     }
 
 }
