@@ -29,3 +29,6 @@ Route::group(['prefix'=>'kullanici'],function(){
     //çıkışyap
     Route::post('/oturumukapat','App\Http\Controllers\KullaniciController@oturumukapat')->name('kullanici.oturumukapat');
 });
+//ödeme
+Route::get('/odeme','App\Http\Controllers\OdemeController@index')->name('odeme');
+Route::post('/odemeyap','App\Http\Controllers\OdemeController@odemeyap')->name('odemeyap');
