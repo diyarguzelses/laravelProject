@@ -53,3 +53,10 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/siparisler/{id}','App\Http\Controllers\SiparislerController@detay')->name('siparis');
     //kullanıcı işlemleri
 });
+
+
+Route::get('/kategori/{slug_kategoriadi}','App\Http\Controllers\KategoriController@index')->name('kategori');
+//urunler
+Route::get('/urun/{slug_urunadi}','App\Http\Controllers\UrunController@index')->name('urun');
+//ürün arama
+Route::post('/ara','App\Http\Controllers\UrunController@ara')->name('urun_ara');
