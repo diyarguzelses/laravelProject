@@ -55,7 +55,6 @@ Route::group(['middleware'=>'auth'], function(){
 });
 
 
-Route::get('/kategori/{slug_kategoriadi}','App\Http\Controllers\KategoriController@index')->name('kategori');
 //urunler
 Route::get('/urun/{slug_urunadi}','App\Http\Controllers\UrunController@index')->name('urun');
 //ürün arama
