@@ -18,12 +18,15 @@ Route::group(['prefix'=>'yonetim',],function() {
             Route::get('/sil/{id}','App\Http\Controllers\Yonetim\KullaniciController@sil')->name('yonetim.kullanici.sil');
 
         });
-
-
-
-
-
     });
+
+});
+Route::group(['prefix' => 'kategori'], function(){
+    Route::match(['get','post'], '/','App\Http\Controllers\Yonetim\KategoriController@index')->name('yonetim.kategori');
+    Route::get('/yeni','App\Http\Controllers\Yonetim\KategoriController@form')->name('yonetim.kategori.yeni');
+    Route::get('/duzenle/{id}','App\Http\Controllers\Yonetim\KategoriController@form')->name('yonetim.kategori.duzenle');
+    Route::post('/kaydet','App\Http\Controllers\Yonetim\KategoriController@kaydet')->name('yonetim.kategori.kaydet');
+    Route::get('/sil/{id}','App\Http\Controllers\Yonetim\KategoriController@sil')->name('yonetim.kategori.sil');
 
 });
 
