@@ -29,6 +29,15 @@ Route::group(['prefix' => 'kategori'], function(){
     Route::get('/sil/{id}','App\Http\Controllers\Yonetim\KategoriController@sil')->name('yonetim.kategori.sil');
 
 });
+Route::group(['prefix' => 'siparis'], function(){
+    Route::match(['get','post'], '/','App\Http\Controllers\Yonetim\SiparisController@index')->name('yonetim.siparis');
+    Route::get('/yeni','App\Http\Controllers\Yonetim\SiparisController@form')->name('yonetim.siparis.yeni');
+    Route::get('/duzenle/{id}','App\Http\Controllers\Yonetim\SiparisController@form')->name('yonetim.siparis.duzenle');
+    Route::post('/kaydet','App\Http\Controllers\Yonetim\SiparisController@kaydet')->name('yonetim.siparis.kaydet');
+    Route::get('/sil/{id}','App\Http\Controllers\Yonetim\SiparisController@sil')->name('yonetim.siparis.sil');
+
+});
+
 
 
 
