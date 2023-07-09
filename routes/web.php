@@ -16,4 +16,7 @@ use Illuminate\Support\Facades\Route;
 //anasayfa
 Route::get('/','App\Http\Controllers\AnasayfaController@index')->name('anasayfa');
 
+//kategori
+Route::get('/kategori/{slug_kategoriadi}','App\Http\Controllers\KategoriController@index')->name('kategori');
+
 
